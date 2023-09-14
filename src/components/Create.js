@@ -48,7 +48,7 @@ const Create = ({ marketplace, nft }) => {
         const uri = `https://petadoption.infura-ipfs.io/ipfs/${result.path}`
         await (await nft.mint(uri)).wait();
         const id = await nft.tokenCount();
-        debugger;
+        
         await (await nft.setApprovalForAll(marketplace.target, true));
         const listingPrice = ethers.parseEther(price.toString());
         await (await marketplace.makeItem(nft.target, id, listingPrice)).wait();

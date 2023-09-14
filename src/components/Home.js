@@ -7,7 +7,7 @@ const Home = ({ nft, marketplace }) => {
     const [items, setItems] = useState([]);
 
     async function loadMarketplaceItem() {
-        debugger;
+        
         const itemCount = await marketplace.itemCount();
         let items = []
         for (let i = 1; i <= itemCount; i++) {
@@ -32,7 +32,7 @@ const Home = ({ nft, marketplace }) => {
     }
 
     const buyMarketItem = async (item) => {
-        debugger;
+        
         await (await marketplace.purchaseItem(item.itemId, { value: item.totalPrice })).wait();
         loadMarketplaceItem();
     }

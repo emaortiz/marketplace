@@ -71,7 +71,7 @@ function App() {
       MarketplaceAbi.abi, 
       signer
     );
-    debugger;
+    
     console.log("Market", marketplace)
     setMarketplace(marketplace);
     setLoading(false);
